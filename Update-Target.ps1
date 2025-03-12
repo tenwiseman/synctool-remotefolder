@@ -1,13 +1,16 @@
 # Update-Target.ps1
-# tenwiseman Mar 2025
+
 <#
     This is a Powershell command script that can be simply placed
-    on a local machine, and manually invoked to recursively copy items from a
+    onto a local machine, and manually invoked to recursively copy items from a
     local source folder to a target folder on a remote machine.
 
-    Using this script is a developers alternative when not having access
-    to a remote machine shell inside the local machine environment, such as is
-    sometimes the case when the user is working remotely.
+    Docs:  https://github.com/tenwiseman/synctool-remotefolder
+
+    This script is entirely for use at your own risk. Please check the commands
+    within and verify that they are valid within your particular use case.
+
+    tenwiseman Mar 2025
 #>
 
 Set-Location $PSScriptRoot
