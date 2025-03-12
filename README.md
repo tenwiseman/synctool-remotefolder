@@ -29,9 +29,9 @@ changes written back to the source folder.
 
 The following variables need to be set at the top of the script
 
-$source - source folder on the local machine
-$target - target folder on the remote machine (UNC path)
-$localcomputer - computer name of the local machine
+- $source : source folder on the local machine
+- $target : target folder on the remote machine (UNC path)
+- $localcomputer : computer name of the local machine
 
 Add names of any files that should be excluded from copying to this string array
 
