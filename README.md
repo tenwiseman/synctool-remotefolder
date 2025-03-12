@@ -15,7 +15,7 @@ overwrites target files that have an older LastWriteTime than the source.
 
 However, if the target contains "foreign" files that do not exist in the source folder or
 target files exist with a newer LastWriteTime than the source, then the user
-is asked if they would like these files copied back to the source folder.
+is asked if they would like these files instead copied back to the source folder.
 
 This assists the workflow where the user may be directly debugging and fixing
 the contents of files on the remote machine, and they would like their sucessful
