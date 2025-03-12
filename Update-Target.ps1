@@ -1,18 +1,28 @@
-# this script is a development helper for copying files over from adrian's laptop
+# Update-Target.ps1
+# tenwiseman Mar 2025
+<#
+    This is a Powershell command script that can be simply placed
+    on a local machine, and manually invoked to recursively copy items from a
+    local source folder to a target folder on a remote machine.
+
+    Using this script is a developers alternative when not having access
+    to a remote machine shell inside the local machine environment, such as is
+    sometimes the case when the user is working remotely.
+#>
 
 Set-Location $PSScriptRoot
 
-
+$localcomputer = 'XPS8700'
 $source = "C:\Users\adrian\My Code\commit-hooktest"
 $target = "\\ott-proto1\c$\AppDir2"
 
 try {
 
-    if ($env:computername -ne 'XPS8700') {
+    if ($env:computername -ne $localcomputer) {
         Throw "This script is not usable on this computer"
     }
 
-    if (-not (Test-Path -Path $Target -PathType Container)) {
+    if (-not (Test-Path -Path $target -PathType Container)) {
         Throw "Target Path '$target' NOT accessible!"
     }
 
@@ -23,7 +33,7 @@ try {
     $manifest = Compare-Object -ReferenceObject $source0 -DifferenceObject $target0 -Property "LastWriteTime" -PassThru |
 
         # ignore files peculiar to workspace
-        Where-Object {$_.Name -notin @(".gitignore", "Update-Target.ps1", "Update-ExcludedFiles.txt")} |
+        Where-Object {$_.Name -notin @("Update-Target.ps1")} |
 
         # add relativepath details
         ForEach-Object {

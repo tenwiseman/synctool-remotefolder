@@ -1,3 +1,0 @@
-Update-ExcludedFiles.txt
-Update-Target.ps1
-

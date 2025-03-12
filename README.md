@@ -20,3 +20,24 @@ is asked if they would like these files instead copied back to the source folder
 This assists the workflow where the user may be directly debugging and fixing
 the contents of files on the remote machine, and they would like their sucessful
 changes written back to the source folder.
+
+## Setup
+
+The following variables need to be set at the top of the script
+
+$source - source folder on the local machine
+$target - target folder on the remote machine (UNC path)
+$localcomputer - computer name of the local machine
+
+Add names of any files that should be excluded from copying to the array
+
+> # ignore files peculiar to workspace
+  Where-Object {$_.Name -notin @("Update-Target.ps1")} |
+
+## Liabilities
+
+None.
+
+This script is entirely for use at your own risk. Please check the commands
+within and verify that they are valid within your particular use case.
+
