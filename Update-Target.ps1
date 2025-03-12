@@ -32,7 +32,7 @@ try {
     # find files that differ by creation times
     $manifest = Compare-Object -ReferenceObject $source0 -DifferenceObject $target0 -Property "LastWriteTime" -PassThru |
 
-        # ignore files peculiar to workspace
+        # ignore files peculiar to local or remote folders
         Where-Object {$_.Name -notin @("Update-Target.ps1")} |
 
         # add relativepath details
