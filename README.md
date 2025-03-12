@@ -29,10 +29,9 @@ $source - source folder on the local machine
 $target - target folder on the remote machine (UNC path)
 $localcomputer - computer name of the local machine
 
-Add names of any files that should be excluded from copying to the array
+Add names of any files that should be excluded from copying to this array
 
-> # ignore files peculiar to workspace
-  Where-Object {$_.Name -notin @("Update-Target.ps1")} |
+> Where-Object {$_.Name -notin @("Update-Target.ps1")} |
 
 ## Liabilities
 
